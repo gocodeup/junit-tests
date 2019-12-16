@@ -2,8 +2,6 @@
 
     import org.junit.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.Assert.*;
 
     public class StudentTest {
@@ -16,7 +14,7 @@ import static org.junit.Assert.*;
         }
 
         @Test
-        public void testStudentFields(){
+        public void testStudents(){
             Student fer = new Student(1L, "Fez");
             assertSame(1L, fer.getId());
             assertSame("Fez", fer.getName());
