@@ -27,8 +27,6 @@ public class StudentTest {
         fer.addGrades(90);
         fer.addGrades(100);
         assertEquals(90, fer.getAverage(), 0.5);
-
-
     }
 
 
