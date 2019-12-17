@@ -10,7 +10,7 @@ public class Student {
         this.grades = new ArrayList<>();
     }
 
-    public ArrayList<Integer> getGrade() {
+    public ArrayList<Integer> getGrades() {
         return this.grades;
     }
 
@@ -30,6 +30,12 @@ public class Student {
         } return gradeTotal/grades.size();
     }
 
+    public double updateGrade(Integer num, int index){
+        return this.getGrades().set(index, num);
+    }
 
+    public void removeGrade(int index){
+        this.getGrades().remove(index);
+    }
 
 }

@@ -17,7 +17,7 @@ public class StudentTest {
         fer.addGrades(75);
         assertEquals("fer",fer.getName());
         assertEquals(1,fer.getId());
-        assertEquals(1, fer.getGrade().size());
+        assertEquals(1, fer.getGrades().size());
     }
 
     @Test
@@ -27,6 +27,23 @@ public class StudentTest {
         fer.addGrades(90);
         fer.addGrades(100);
         assertEquals(90, fer.getAverage(), 0.5);
+    }
+
+    @Test
+    public void updatedGradeTest(){
+        Student fer = new Student("fer", 1);
+        fer.addGrades(80);
+        fer.updateGrade(90, 0);
+        assertEquals(90, (int) fer.getGrades().get(0));
+    }
+
+    @Test
+    public void removedGradeTest(){
+        Student fer = new Student("fer", 1);
+        fer.addGrades(90);
+        fer.addGrades(100);
+        fer.removeGrade(1);
+        assertEquals(1,fer.getGrades().size());
     }
 
 
