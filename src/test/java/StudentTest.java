@@ -8,6 +8,11 @@ import static org.junit.Assert.*;
     public class StudentTest {
         Student will = new Student(1L, "William");
 
+        @Before
+        public void setup (){
+            will.addGrade(100);
+            will.addGrade(80);
+        }
 
         @Test
         public void testCreateStudent(){
@@ -26,16 +31,12 @@ import static org.junit.Assert.*;
 
         @Test
         public void testAddGrade(){
-            will.addGrade(100);
             assertSame(100, will.getGrades().get(0));
-            will.addGrade(80);
             assertSame(80, will.getGrades().get(1));
         }
 
         @Test
         public void testAverageGrade(){
-            will.addGrade(100);
-            will.addGrade(80);
             assertEquals(90, will.getGradeAverage(), 0);
         }
     }
