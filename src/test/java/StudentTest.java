@@ -1,30 +1,28 @@
 import org.junit.Before;
 import org.junit.Test;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class StudentTest {
 
     Student student1;
+    Student student2;
 
-    @Before
-    public void setUp(){
+    @Test
+    public void testIfStudentConstructorWorks(){
         student1 = new Student(214567L, "Jack Smith");
-    }
-
-    @Test
-    public void testIfStudentExists(){
         assertNotNull(student1);
+        student2 = null;
+        assertNull(student2);
     }
 
     @Test
-    public void testIfIdWorks(){
-        assertNotEquals(7890L, student1.getId());
+    public void testIfGetterWorks(){
+        student1 = new Student(214567L, "Jack Smith");
         assertEquals(214567L, student1.getId());
-    }
-
-    @Test
-    public void testIfNameWorks(){
-        assertNotNull(student1.getName());
+        assertNotEquals(1L, student1.getId());
         assertEquals("Jack Smith", student1.getName());
         assertNotEquals("John Smith", student1.getName());
     }
