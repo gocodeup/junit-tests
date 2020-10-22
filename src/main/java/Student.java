@@ -10,4 +10,12 @@ public class Student {
         this.name = name;
         grades = new ArrayList<>();
     }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
 }
