@@ -20,8 +20,8 @@ public class Student {
         return name;
     }
 
-    public void addGrades() {
-
+    public void addGrades(int grade) {
+        this.grades.add(grade);
     }
 
     public ArrayList<Integer> getGrades(){
