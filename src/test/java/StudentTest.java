@@ -8,7 +8,7 @@ public class StudentTest {
 
     @Before
     public void setUp(){
-        student1 = new Student();
+        student1 = new Student(214567L, "Jack Smith");
     }
 
     @Test
@@ -16,4 +16,16 @@ public class StudentTest {
         assertNotNull(student1);
     }
 
+    @Test
+    public void testIfIdWorks(){
+        assertNotEquals(7890L, student1.getId());
+        assertEquals(214567L, student1.getId());
+    }
+
+    @Test
+    public void testIfNameWorks(){
+        assertNotNull(student1.getName());
+        assertEquals("Jack Smith", student1.getName());
+        assertNotEquals("John Smith", student1.getName());
+    }
 }
