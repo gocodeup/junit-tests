@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 
 public class StudentTest {
-    private List<Student> tests;
+    private ArrayList<Student> tests;
 //    @Test
 //    public void testIfStudentClassHasCorrectProperties() {
 //        Student test = new Student();
@@ -35,5 +35,13 @@ public class StudentTest {
         assertNotEquals(tests.get(0).getName(), null);
         assertEquals(tests.get(0).getId(), 01);
         assertEquals(tests.get(0).getName(), "test01");
+    }
+
+    @Test
+    public void testGradeFunctionality() {
+        tests.get(0).addGrade(85);
+        ArrayList<Integer> expected = new ArrayList<>();
+        expected.add(85);
+        assertTrue(expected.equals(tests.get(0).getGrades()));
     }
 }
