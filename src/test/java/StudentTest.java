@@ -38,10 +38,17 @@ public class StudentTest {
     }
 
     @Test
-    public void testGradeFunctionality() {
+    public void testAddAndGetGradeFunctionality() {
         tests.get(0).addGrade(85);
         ArrayList<Integer> expected = new ArrayList<>();
         expected.add(85);
         assertTrue(expected.equals(tests.get(0).getGrades()));
+    }
+
+    @Test
+    public void testGetGradeAverage() {
+        tests.get(0).addGrade(90);
+        tests.get(0).addGrade(80);
+        assertTrue(85.0 == tests.get(0).getGradeAverage());
     }
 }
