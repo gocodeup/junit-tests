@@ -37,4 +37,13 @@ public class StudentTest {
         assertEquals(2, student1.getGrades().size());
     }
 
+    @Test
+    public void testIfGetGradesWorks(){
+        student1 = new Student(214567L, "Jack Smith");
+        student1.addGrades(85);
+        student1.addGrades(95);
+        student1.addGrades(66);
+        assertEquals(95, (int) student1.getGrades().get(1));
+        assertNotEquals(95, (int) student1.getGrades().get(0));
+    }
 }
