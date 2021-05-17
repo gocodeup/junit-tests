@@ -22,5 +22,31 @@ public class StudentTest {
         assertEquals("Stephanie", her.getName());
     }
 
+   @Test
+    public void AddGradeTest(){
+       Student me = new Student(11, "Manii");
+       assertEquals(0, me.addGrade().size());
+       me.addGrade(60);
+       assertEquals(1, me.addGrade().size());
+       me.addGrade(75);
+   }
 
+    @Test
+    public void AddGetTest(){
+        Student me = new Student(11, "Manii");
+        me.addGrade(75);
+        me.addGrade(60);
+       assertSame(75, me.getGrades().get(0));
+        assertSame(60, me.getGrades().get(1));
+    }
+
+    @Test
+    public void getAverageTest(){
+        Student me = new Student(11, "Manii");
+        me.addGrade(90);
+        me.addGrade(80);
+        assertEquals(80, me.getGradeAverage(), 0);
+        me.addGrade(50);
+        assertEquals(60, me.getGradeAverage(), 0);
+    }
 }
